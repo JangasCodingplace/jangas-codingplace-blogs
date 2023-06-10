@@ -1,0 +1,54 @@
+# Event Driven Programming with Serverless Functions  
+Serverless computing is a modern cloud computing model that allows developers to focus on writing code without worrying about managing servers or infrastructure. In traditional programming projects, developers need to set up and maintain servers to run their applications, which can be time-consuming and complex. With serverless, all the infrastructure management is abstracted away and fully managed by the cloud provider. Developers only need to write and deploy their code as functions.  
+  
+## Some Modern Challenges
+Software projects face numerous challenges, and while not all of them can be solved by serverless functions, there are several areas where serverless technology can provide simplification and efficiency. Let's explore a few challenges commonly encountered in software development.  
+  
+As software systems grow in complexity, it is becoming common to break down monolithic applications into smaller tools or services, often referred to as microservices. These microservices can be developed using different technologies and languages. However, managing and maintaining these distributed components, coordinating their interactions, and dealing with operational overhead can be complex and challenging. The choice between using microservices or sticking with a monolithic approach can be a contentious topic, and the decision depends on various factors.  
+  
+Modern architectures have various number of events to react to . For instance HTTP Requests where a server gets a request and needs to answer in few microseconds, or file uploads where files get stored onto an SFTP server and should be processed directly after upload, or time triggered events where a data pipeline should be triggered hourly. Those different kind of events leads into different operational tactics and a challenging documentation process.
+  
+By leveraging serverless technology, organizations can streamline their development processes and reduce maintenance efforts. While serverless may not be a one-size-fits-all solution for all software challenges, it offers an efficient and simplified approach to handle specific event-driven scenarios.
+
+## No sentence about scalability
+In this article, it is important to highlight that scalability encompasses more than just handling increased data or traffic within shorter timeframes. While scalability is often perceived as a term solely focused on managing larger volumes of data, it is essential to recognize its multiple dimensions and complexities. The serverless technologies discussed in this article aim to provide scalability to accommodate growing demands. However, it is worth noting that not every project requires infinite scalability. The emphasis on scalability and being error-tolerant is often driven by infrastructure buyers and managers, but it is crucial to understand the true meaning and relevance of scalability for individual project needs. Therefore, this article does not prioritize discussing scalability extensively to ensure that you are not swayed solely by these buzzwords without considering the specific requirements and implications for your project.
+
+## Introduction into Serverless Technology
+Serverless technology has rethought the way applications are developed and deployed. One example  are storage-triggered functions, where actions on storage systems like Azure Blob Storage, Amazon S3, or Google Cloud Storage automatically invoke serverless functions. These functions can process uploaded or modified files, trigger downstream actions, or perform validations. Storage triggers simplify file handling and enable seamless integration with storage systems.
+
+Event-driven architectures play a vital role in serverless computing, utilizing services like Azure Event Grid, Azure Service Bus, or Apache Kafka. These services enable communication between components in an event-driven manner, where events such as file uploads, database changes, or external triggers act as triggers for serverless functions. Event-driven architectures promote loose coupling, scalability, and responsiveness, allowing applications to react to dynamic events efficiently.
+
+Serverless technology also supports time-triggered functions, which are scheduled to execute at specific intervals or times. This feature enables automated, time-based tasks, such as running batch processes, generating reports, or performing system maintenance. By leveraging time triggers, developers can automate recurring processes and reduce manual effort, improving system efficiency.
+
+It's important to note that serverless technology is not synonymous with "no code" development. While serverless platforms provide abstractions and automate infrastructure management, developers still need to write code to define the business logic of their applications. Serverless supports a wide range of programming languages, including Python, Java, JavaScript, and many more, allowing developers to leverage their preferred language and libraries to build serverless applications. This flexibility enables developers to choose the most suitable language for their project and leverage existing skills and libraries, facilitating rapid development and deployment in a serverless environment.
+
+## Differences between Major Providers for Serverless Technology
+When evaluating major cloud providers for serverless technology, it's important to note that personal experiences and biases can influence perceptions. As someone who has worked with AWS, Microsoft Azure, and GCP at different times, it's crucial to acknowledge that impressions might be based on outdated information. However, it is still valuable to provide an introductory overview of these providers' serverless offerings to help you navigate the serverless landscape.
+
+AWS with their Lambda Functions offers a broader range of languages, triggers and greater flexibility for fine-tuning the architecture compared to GCP and Azure. For instance, AWS allows the creation of custom D3 environments to support specific Language versions that are not natively supported, granting developers more control but necessitating a deeper understanding of the technology. Supported languages are Java, Go, PowerShell, Node, JavaScript, C#, Python, and Ruby.
+
+Azure Functions offering has gained momentum over time, offering a user-friendly experience with easier control compared to AWS. While Azure may have fewer language support options and triggers compared to AWS, it has made significant strides in functionality from its initial version to version two. Azure Functions 2.0 introduced improvements such as tighter integration with Azure DevOps and improved tooling. Supported Languages in Azure Functions are C#, F#, JavaScript, Python, Java and Powershell.
+  
+While my experience with GCP is limited to a single hackathon, Google Cloud Platform (GCP) offers a competitive serverless solution. GCP's serverless offering, Google Cloud Functions, provides a straightforward and user-friendly experience for building serverless applications. From my very personal point of view I had not as much fun programming with GCP Cloud Functions as I had with Azure Functions or AWS Lambda Functions. It has not as many triggers as AWS, but it should be a good competitor to Microsoft Azure. However, due to my limited exposure, it is advisable to explore GCP's documentation and seek additional perspectives to gain a more comprehensive understanding of their serverless capabilities.
+
+An example as Code for each of those cloud providers will follow as soon as possible ©.
+
+## Downsides Of Serverless Technologies
+**Pricing** in the serverless realm can be challenging to navigate as it is often complex and lacks transparency. While the pay-as-you-go model promises cost efficiency by charging only for actual usage, understanding and estimating the costs can be difficult due to the various components involved, such as compute time, memory, data transfer, and additional services.
+
+Although **pay-as-you-go pricing** is a common model, there are also **fixed-price plans** available. However, these plans often come with high starting prices, making them less suitable for smaller applications or projects with unpredictable workloads.
+
+**Logging** can become a cost factor in serverless architectures. As functions and services generate logs for monitoring, debugging, and auditing purposes, the volume of logs can quickly accumulate, leading to increased storage and retrieval costs. 
+
+While serverless technologies offer scalability and convenience, they may not provide the same level of flexibility as other options like self-hosted or container-based architectures. Serverless platforms often have certain limitations, such as maximum execution time, resource constraints, and restricted access to the underlying infrastructure.
+
+## Personal Experience
+
+Based on my personal experiences, I have found serverless technologies to be highly advantageous. One aspect I particularly appreciate is their ability to facilitate rapid deployment of small, independent code snippets without the need for extensive infrastructure setup. I have successfully utilized serverless technology in a wide range of projects, spanning from small companies with just a few developers to large-scale enterprises with hundreds or even thousands of developers. In each case, serverless technology proved to be a suitable and effective solution.
+
+While some developers may initially find the concept of serverless technology unfamiliar or counterintuitive, it is important to overcome any hesitations. Many developers prefer to have full control and may perceive serverless technology as being more complex than traditional approaches. However, based on my personal experience, I can confidently say that utilizing serverless technology is not as challenging as it may seem. In fact, it often simplifies development processes and offers significant benefits.
+
+Of course, it is crucial to acknowledge that serverless technology may not be the ideal solution for every use case. However, I highly recommend giving it a try.
+
+## Conclusion
+In conclusion, serverless technology offers a powerful approach to developing event-driven applications without the burden of managing infrastructure. It enables rapid deployment, simplified maintenance, and scalability, making it an attractive option for many projects. While there are downsides to consider, such as pricing complexity and limitations on flexibility, the benefits of serverless, coupled with proper understanding and evaluation of project requirements, can lead to efficient and cost-effective solutions. Whether it's AWS Lambda, Azure Functions, or Google Cloud Functions, exploring serverless offerings from major cloud providers empowers developers to leverage the advantages of event-driven programming and unleash the potential of their applications.
