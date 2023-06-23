@@ -16,24 +16,24 @@ mitzuteilen. Sende mir dazu doch einfach eine Mail an
 [info@jangascodingplace.com](mailto:info@jangascodingplace.com)
 
 ## Kommende Blogs, Snippets und Guides
-- [ ] ein paar Cloud Themen
-	- [ ] Hands-On: Serverless mit Python und AWS
-	- [ ] Hands-On: Serverless mit Python und Microsoft Azure
-	- [ ] Hands-On: Serverless mit Python und GCP
-- [ ] Zeitreihen Analyse
-	- [ ] Kapazitätsplanung mithilfe von Zeitreihen
-	- [ ] Echtzeit Anomalie Erkennung mit Apache Kafka und Zeitreihen
-- [ ] Empfehlungssysteme
-	- [ ] Einleitung in Empfehlungssysteme
-	- [ ] ein Projekt für ein Empfehlungssystem mit der OpenAI API und  GPT-3.5-Turbo
-	- [ ] ein Projekt für ein Empfehlungssystem mit Content Based Filtering
-- [ ] Warum ich es hasse über Skalierbarkeit zu sprechen
-- [ ] Überall Datenpipelines - eine Einführende Übersicht in die Welt der High Throughput Pipelines 
-- [ ] Fun with Microservices - wie man Software Projekte am Leben hält
+- ein paar Cloud Themen
+	- Hands-On: Serverless mit Python und AWS
+	- Hands-On: Serverless mit Python und Microsoft Azure
+	- Hands-On: Serverless mit Python und GCP
+- Zeitreihen Analyse
+	- Kapazitätsplanung mithilfe von Zeitreihen
+	- Echtzeit Anomalie Erkennung mit Apache Kafka und Zeitreihen
+- Empfehlungssysteme
+	- Einleitung in Empfehlungssysteme
+	- ein Projekt für ein Empfehlungssystem mit der OpenAI API und  GPT-3.5-Turbo
+	- ein Projekt für ein Empfehlungssystem mit Content Based Filtering
+- Warum ich es hasse über Skalierbarkeit zu sprechen
+- Überall Datenpipelines - eine Einführende Übersicht in die Welt der High Throughput Pipelines 
+- Fun with Microservices - wie man Software Projekte am Leben hält
 
 Hast du Meinungen oder andere Vorschläge? Lass' es mich wissen! 
 Sende eine Mail an: info@jangascodinglpace.com
 
 ## Kommende Seiten and Features
-- [ ] Über mich Seite
-- [ ] Kurs Seite
+- Über mich Seite
+- Kurs Seite
