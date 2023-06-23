@@ -27,23 +27,23 @@ free to reach out to me via email at
 to share your thoughts or collaborate on potential articles.
 
 ## Upcoming Blogs, Snippets and Guides
-- [ ] some cloud topics
-	- [ ] serverless project with Python and AWS
-	- [ ] serverless project with Python and GCP
-	- [ ] serverless project with Python and MS Azure
-- [ ] Timeseries analysis
-	- [ ] capacity planning with Timeseries analysis in a Real World project
-	- [ ] Real time anomaly detection with Apache Kafka and TimeSeries Analysis
-- [ ] Recommendation Systems
-	- [ ] introduction into Recommendation systems
-	- [ ] project for a recommendation system with ChatGPT
-	- [ ] project for a recommendation system with Content Based filtering
-- [ ] Why I do not like to talk about scalability
-- [ ] Data Pipelines Everywhere - Guide into High Throughput Data Pipelines
-- [ ] Fun with Microservices - how to maintain a software architecture
+- some cloud topics
+	- serverless project with Python and AWS
+	- serverless project with Python and GCP
+	- serverless project with Python and MS Azure
+- Timeseries analysis
+	- capacity planning with Timeseries analysis in a Real World project
+	- Real time anomaly detection with Apache Kafka and TimeSeries Analysis
+- Recommendation Systems
+	- introduction into Recommendation systems
+	- project for a recommendation system with ChatGPT
+	- project for a recommendation system with Content Based filtering
+- Why I do not like to talk about scalability
+- Data Pipelines Everywhere - Guide into High Throughput Data Pipelines
+- Fun with Microservices - how to maintain a software architecture
 
 Any other impressions? Let me know! Send a mail to: info@jangascodinglpace.com
 
 ## Upcoming pages and Features
-- [ ] about me page
-- [ ] courses
+- about me page
+- courses
