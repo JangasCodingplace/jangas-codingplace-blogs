@@ -483,6 +483,10 @@ Schau' dir gerne kurz an, wie die Zeitreihen aussehen:
 ```
 Wie du siehst einfach nur eine numerische ID und einen Zeitstempel, dies können wir im folgenden auch Log nennen.
 
+
+![enter image description here](https://raw.githubusercontent.com/JangasCodingplace/jangas-codingplace-blogs/main/blogs/timeseries-analysis-random-introduction/basic_plot.png)
+
+
 Theoretisch ist hier mal platz ein bisschen genauer rein zu schauen. Ich bin gerade allerdings etwas faul und unter Zeitdruck, also ab zum nächsten Schritt.
 
 ### Datenaufbereitung
@@ -564,3 +568,5 @@ train_data['count'].plot(legend=True, label="TRAIN", figsize=(12, 8))
 test_data['count'].plot(legend=True, label="TEST")
 test_predictions.plot(legend=True, label="PREDICTION")
 ```
+
+![enter image description here](https://raw.githubusercontent.com/JangasCodingplace/jangas-codingplace-blogs/main/blogs/timeseries-analysis-random-introduction/forecast.png)
