@@ -1,15 +1,21 @@
 # Queueing und Web
-Im folgenden werden drei Lösungsansätze für die selbe Aufgabenstellung vorgestellt. In diesen Ansätzen geht es darum, dass zwei Prozesse voneinander entkoppelt werden sollen:
+Im folgenden werden drei Lösungsansätze für die selbe Aufgabenstellung vorgestellt. In diesen 
+Ansätzen geht es darum, dass zwei Prozesse voneinander entkoppelt werden sollen:
 
 1. eine Nutzeranfrage schreibt einen Eintrag in die Datenbank
 2. mit dem neuen Eintrag wird ein "langsamer" Prozess getriggert
 
-Die Antwort an den Nutzer oder die Nutzerin soll dabei aber möglichst sofort erfolgen und nicht extra auf die Verarbeitung des langsamen Prozesses gewartet werden.
+Die Antwort an den Nutzer oder die Nutzerin soll dabei aber möglichst sofort erfolgen und 
+nicht extra auf die Verarbeitung des langsamen Prozesses gewartet werden.
 
 ## Über diesen Artikel
-Dieser Artikel ist Teil von "JangasCodingplace" - meine persönliche Webseite. Mein Anliegen ist es nicht Tutorials zu schreiben - davon gibt es genug. Das können andere auch besser! Etwas was mir aber oft ein wenig fehlt: ganzheitliche, themenübergreifende Projekte und die Vermittlung von Konzepten. Darauf möchte ich mich ein wenig stürzen.
+Dieser Artikel ist Teil von "JangasCodingplace" - meine persönliche Webseite. Mein Anliegen 
+ist es nicht Tutorials zu schreiben - davon gibt es genug. Das können andere auch besser! 
+Etwas was mir aber oft ein wenig fehlt: ganzheitliche, themenübergreifende Projekte und die 
+Vermittlung von Konzepten. Darauf möchte ich mich ein wenig stürzen.
 
-Zudem ist JangasCodingplace ein Ort, der mir dabei helfen soll, meine kleinen Freizeitprojekte abzuschließen und vorzustellen. Dieses Projekt ist ein Teil davon.
+Zudem ist JangasCodingplace ein Ort, der mir dabei helfen soll, meine kleinen Freizeitprojekte 
+abzuschließen und vorzustellen. Dieses Projekt ist ein Teil davon.
 
 [//]: # (START CUSTOM SCRIPT)
 [//]: # (START MARKDOWNREF)
@@ -18,21 +24,24 @@ Zudem ist JangasCodingplace ein Ort, der mir dabei helfen soll, meine kleinen Fr
 [//]: # (END CUSTOM SCRIPT)
 
 
-## Umgang mit dieser Projektvorstellung
-Ich werde drei unterschiedliche Lösungsanstätze vorstellen, ein Ansatz wilder als der andere:
-- Python Django pur mit der Python Queue
-- Python Django & Amazon Simple Queue Service & Amazon Lambda
-- Scala Play & Akka
+## Projektvorstellung
+Dieses Projekt wird mehrfach mit verschiedenen Ansätzen gelöst. Konkret werden dabei folgende 
+Lösungen vorgestellt:
 
-Dabei sind die Ansätze jeweils zweigeteilt:
-1. Vorstellung der verwendeten Konzepte und Tools für einen grundsätzlichen Aufbau der Verständnis
-2. Konkrete Implementierung im Code
+- Python Django und der Python Queue
+- Python Django, Amazon Simple Queue Service (SQS) und AWS Lambda
+- Scala Play und Akka
 
-Dabei ist zu beachten, dass dies **kein** ganzheitliches Tutorial ist. Es ist also nicht in allen Bereichen perfekt erklärt und das ist auch nicht unbedingt der Anspruch.
+Die Lösungen stehen jeweils für sich alleine und bestehen aus drei, bzw. vier Teilen:
 
-Dies ist ein Mehrteiliger Beitrag. Alle Lösungen funktionieren unabhängig voneinander. Entsprechend kannst du dich auf die Ansätze konzentrieren, die dich am meisten interessieren.
+1. Nochmalige Projektvorstellung
+2. Schnellvorstellung des gewählten Ansatzes
+3. Theoretische Einführung in die Lösung und Erklären der verwendeten Tools & Konzepte
+4. Konkrete Implementierung der Lösung im vorgestellten Setup
 
-Ich muss sagen: Ich bin kein guter Scala Entwickler. Allerdings haben mir einige Konzepte sehr dabei geholfen bestimmte Dinge besser zu verstehen und auch meinen Python Code zu verbessern. Auch wenn man es nicht unbedingt anwendet, kann es durchaus bereichernd sein, sich mal nach links und rechts umzusehen und eventuell *versehentlich* etwas für sich mitzunehmen.
+Es ist nicht notwendig alles zu lesen. Nimm' dir die Teile heraus, die dich interessieren. 
+Natürlich wird auch nicht jedes Tooling, Framework und Sprache von Grund auf erklärt. Es wird 
+sich auf das beschränkt, was für das Projekt wichtig ist.
 
 
 [//]: # (START CUSTOM SCRIPT)
