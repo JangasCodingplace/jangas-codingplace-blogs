@@ -1,8 +1,27 @@
-# Die Implementierung mit Django, Simple Service Queue und AWS Lambda
+# Django, Simple Service Queue und AWS Lambda
+[//]: # (START CUSTOM SCRIPT)
+[//]: # (START MARKDOWNREF)
+[//]: # (https://raw.githubusercontent.com/JangasCodingplace/jangas-codingplace-blogs/main/blogs/web-and-queues/assets/project-description/de.md)
+[//]: # (END MARKDOWNREF)
+[//]: # (END CUSTOM SCRIPT)
 
-Für diesen Ansatz wird eine Microservice Architektur genutzt. Zur Kommunikation mit einem Client wird Pythons Django Framework genutzt. Mit dem erstellen eines Log-Beitrags wird eine Nachricht an einen Simple Queue Service geschickt. Eine Lambda Funktion konsumiert diesen Simple Queue Service und wird ausgelöst, sobald eine Nachricht von Django geschrieben wurde.
+## Überblick
+In dieser Lösung wird Django mit Serverless Funktionen der Amazon Web Services kombiniert.
+Da es keine vollständige Liste an Technologien geben kann, wird ein LLM zur Informationsextraktion
+verwendet, im konkreten GPT-3.5-Turbo von OpenAI.
 
-**Die Vorteile**
+Allerdings dauert die Abfrage gegen diese API verhältnismäßig lange und unter Last schlägt sie auch
+gerne mal fehl. Daher soll die Nutzerinteraktion (speichere Log) von der Informationsextraktion
+durch OpenAI getrennt werden.
+
+Diese Trennung wird durch eine Teilung der Software in zwei Bestandteile sowie die Kopplung über
+den Simple Queue Service ermöglicht.
+
+Dies wird auch Microservice Architektur genannt. Zur Kommunikation mit einem Client wird Pythons 
+Django Framework genutzt. Mit dem erstellen eines Log-Beitrags wird eine Nachricht an den Simple 
+Queue Service (SQS) geschickt. Eine Lambda Funktion wird durch diesen Simple Queue Service getriggert.
+
+### Die Vorteile
 - Django ist ein brilliantes Webframework, mit einer riesigen Community und atemberaubend guten, generischen Funktionen und Klassen
 - der Simple Queue Service erlaubt eine einfache Entkopplung der Microservices und Django kann Nachrichten a la "Fire and Forget" feuern. Sollte es zu Last Peaks kommen, können diese durch den SQS als Puffer abgefangen werden und nachträglich verarbeitet werden. Außerdem gibt es das Konzept der Dead Letter Queue. Sollte es zu Fehlern kommen (z.B. weil OpenAI nicht immer in der Form Antwortet, die wir brauchen), können die Fehlerhaften Nachrichten in die Dead Letter Queue geschoben werden und nachträglich nochmal verarbeitet werden
 - Deployments sind unter der Verwendung des SQS kein Problem. Da der SQS ausgelagert ist, gehen bei einem Deployment keine Nachrichten verloren
@@ -10,17 +29,59 @@ Für diesen Ansatz wird eine Microservice Architektur genutzt. Zur Kommunikation
 - es gibt ein hervorragendes Gratisprogramm von AWS in Bezug auf die Lambda Funktionen mit bis zu 1 Millionen Anforderungen und 3,2 Millionen Millisekungen gratis pro Monat
 - AWS garantiert für die Permanente Verfügbarkeit ihrer Lambda Funktionen
 
-**Die Nachteile**
+### Die Nachteile**
 - Microservices machen es nicht immer ganz einfach von Ende zu Ende zu debuggen - es müssen immer mehrere Anwendungen gleichzeitig laufen. Bei kleinen Anwendungen (wie Dev-Guro) ist das u.U. zu umständlich
 - der Simple Queue Service ist ein nativer Service in der Amazon Cloud. Solche Cloud Dienste Lokal z.B. durch Docker laufen zu lassen ist immer etwas hacky
 - weder der SQS noch die Lambda Funktion hat ein striktes Schema für die Entitäten. Spätestens in der Lambda Funktion muss das Nachrichtenformat streng genommen nochmal extra validiert werden
 - es muss für die Rückgabe der Lambda Funktion nach Django ein extra Endpunkt bereitgestellt werden
 
-Für die echte Entwicklung von Dev-Guro habe ich genau den Ansatz gewählt. Allerdings muss ich zugeben, dass ich dadurch extrem verlangsamt wurde und gerade hinten raus viel Aufwand entstand. 
 
-Aber genug davon. Schauen wir uns die Implementierung an.
+## Theoretisches und Konzepte
+In diesem Projekt wird AWS verwendet. AWS ist bekanntlich einer der drei großen Clound Anbieter 
+(Amazon Web Services, Microsoft Azure, Google Cloud Console) - vermutlich ist AWS sogar der Größte 
+der drei Anbieter.
 
-## Models
+Die angewendeten Services sind in ähnlicher Form aber in jedem der drei großen Anbieter verfügbar. 
+Im folgenden wird sich also auf sehr generelle Aspekte beschränkt, die in diesem Projekt Anwendung finden:
+
+
+- Serverless Functions
+- Message Systems und Queues
+
+
+### Serverless Functions
+Serverless ist ein Cloud-Computing-Ausführungsmodell, bei dem der Cloud-Anbieter die Infrastruktur verwaltet, 
+auf der Code ausgeführt wird. Man könnte sagen, dass der Name "serverless" ein wenig irreführend ist, da immer 
+noch Server im Spiel sind. Der Unterschied besteht jedoch darin, dass Entwickler und Entwicklerinnen sich nicht 
+um die Server-Verwaltung kümmern müssen - der Cloud Anbieter garantiert für Aktualität und Lauffähigkeit.
+
+Serverless Functions sind eine spezielle Art von Serverless-Diensten, bei denen Entwickler Einzelfunktionen 
+bereitstellen, die in Reaktion auf bestimmte Ereignisse (z. B. eine HTTP-Anfrage, eine neue File im Blob Storage, 
+eine Änderung in einer Datenbank, uvm.) ausgeführt werden - das wird übrigens *ereignisgesteuerte Ausführung* 
+genannt. Hierzu gibt es bei mir bereits [einen Artikel hier](https://jangascodingplace.com/blog/article/event-driven-programming-mit-serverless-functions).
+
+In diesem Projekt werden die Lambda Funktionen von AWS genutzt.
+
+
+### Queues und Message Systeme
+In Microservice-Architekturen sind die Dienste oft so konzipiert, dass sie unabhängig und isoliert voneinander 
+arbeiten. Um eine effiziente und entkoppelte Kommunikation zwischen diesen Diensten zu gewährleisten, werden häufig 
+Warteschlangen (Queues) und Nachrichtensysteme (Message Systems) eingesetzt. 
+
+Eine Queue ist die Implementierung einer Datenstruktur, die Nachrichten oder Aufgaben in der Reihenfolge ihrer 
+Ankunft ablegt. In einer Microservice-Architektur kann ein Dienst eine Nachricht in eine Warteschlange senden, und 
+ein anderer Dienst kann diese Nachricht später abholen und verarbeiten.
+
+Dadurch wird eine Entkopplung ermöglicht. Dienste müssen nicht gleichzeitig online oder verfügbar sein. Auch 
+Elastizität wird geboten. Wenn ein Dienst plötzlich eine große Anzahl von Anfragen erhält, können diese Anfragen in 
+eine Warteschlange gestellt und schrittweise verarbeitet werden.
+
+In diesem Projekt wird der Simple Queue Service von AWS genutzt.
+
+
+## Die Implementierung
+
+### Models
 Fangen wir mit den Models an. Davon gibt es zwei: `Log` und `Tag`. Der Einfachheit halber lasse ich die Nutzer Zuordnung im folgenden mal weg. Um das klar zu stellen: das Usermanagement in Django ist erstaunlich einfach. Nur möchte ich den Fokus eher auf anderes lenken. Zu diesem Punkt komme ich aber später nochmal in der Conclusion.
 ```python
 # models.py
@@ -57,7 +118,7 @@ Viel gibt es hier nicht zu sagen, aber hier doch noch ein paar Eckdaten
 - im Model `Tag` und Feld `type` ist ein `choice_field` . Dort werden im Prinzip alle erlaubten Charakter-Werte definiert
 - der `related_name="tags"` im Foreignkey erlaubt ein wenig syntactic sugar und ermöglicht einen schnelleren Zugriff auf die Objekte die auf einen bestimmten Tag zeigen. z.B. so: `Log.objects.get(id=1).tags` anstelle von `Tag.objects.filter(log__id=1)`
 
-## Signals
+### Signals
 Nachdem ein Log erstellt wurde, soll dieser an den Simple Queue Service gepublished werden. Dies tue ich im folgenden mit einem `post_save` Signal.
 
 ```python
@@ -99,7 +160,7 @@ def pub_log_event_to_sqs(instance: models.Log, created: bool, **kwargs):
 - `boto3` ist das AWS SDK. Dort gibt es viele verschiedene APIs. In unserem Fall wird der `sqs` genutzt.
 - Anschließend wird eine Nachricht an den SQS geschickt. Hier ist wichtig, dass die Queue bereits existieren muss
 
-## Serializers
+### Serializers
 Ich arbeite fast ausschließlich mit den Class-Based-Views. Die Serializers helfen dort massiv den Code zu reduzieren indem der User-Request automatisch zum Objekt geparsed (serializiert) und der Response automatisch zum JSON Objekt geparsed (deserializiert) wird.
 
 ```python
@@ -130,7 +191,7 @@ class TagSerializer(serializers.ModelSerializer):
 	- die Verwendung des `PrimaryKeyRelatedField` wird insbesondere dann sinnvoll, wenn man vermeiden möchte, dass die Objekte auf die ein Foreign Key zeigt, mit erstellt werden. Das ist manchmal etwas nervig.
 
 
-## Views
+### Views
 
 Nun fehlen im Prinzip nur noch die Views. Im konkreten Fall gibt es zwei Views: einen View zum erstellen eines Logs (für den Nutzer), sowie eines weiteren Views zum erstellen der Tags für einen Log (für die Lambda Funktion).
 
@@ -160,7 +221,7 @@ class TagCreateView(CreateAPIView):
 	- Diese Implementierung ist gut fürs Prototyping aber schlecht in der Performance. Es ist zu erwarten, dass ausschließlich Tags zu einem bestimmten Log mitgeschickt werden. In der aktuellen Implementierung wird der Log zu einem Primary Key allerdings nicht nur einmal, sondern n-Mal aus der Datenbank geholt. Diese Abfrage ist recht performant (da ein Primary Key abgefragt wird) und je nach Datenbank gibt es auch ein automatisches Caching. Allerdings liegt hier immenses Optimierungspotential.
 
 
-## AWS Lambda
+### AWS Lambda
 
 Nun gehen wir raus aus der Django Welt und rein in AWS Lambda. Für die Lambda Funktion gibt es dabei einige Hilfskonstanten sowie Methoden. Angefangen beim Prompt:
 
