@@ -17,6 +17,7 @@ Vermittlung von Konzepten. Darauf möchte ich mich ein wenig stürzen.
 Zudem ist JangasCodingplace ein Ort, der mir dabei helfen soll, meine kleinen Freizeitprojekte 
 abzuschließen und vorzustellen. Dieses Projekt ist ein Teil davon.
 
+## Projektbeschreibung
 [//]: # (START CUSTOM SCRIPT)
 [//]: # (START MARKDOWNREF)
 [//]: # (https://raw.githubusercontent.com/JangasCodingplace/jangas-codingplace-blogs/main/blogs/web-and-queues/assets/project-description/de.md)
