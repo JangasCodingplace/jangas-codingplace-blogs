@@ -1,4 +1,4 @@
-# Projektbeschreibung
+## Projektbeschreibung
 Dieses Projekt stellt eine Teilfunktion einer meiner Anwendungen "Dev-Guro" dar. 
 In dieser Teilfunktion werden Dev-Logs gespeichert. Sollten Tech-Stack spezifische 
 Dinge im Log erwähnt werden, so sollen diese in Form von Tags aus den Logs gezogen 
