@@ -53,8 +53,7 @@ sich auf das beschränkt, was für das Projekt wichtig ist.
 
 [//]: # (START CUSTOM SCRIPT)
 [//]: # (START CONTENT LIST)
-[//]: # (https://raw.githubusercontent.com/JangasCodingplace/jangas-codingplace-blogs/main/blogs/web-and-queues/sub-content/django-conceptual/de.md)
-[//]: # (https://raw.githubusercontent.com/JangasCodingplace/jangas-codingplace-blogs/main/blogs/web-and-queues/sub-content/django-pure-impl/de.md)
+[//]: # (https://raw.githubusercontent.com/JangasCodingplace/jangas-codingplace-blogs/main/blogs/web-and-queues/sub-content/django-pure/de.md)
 [//]: # (https://raw.githubusercontent.com/JangasCodingplace/jangas-codingplace-blogs/main/blogs/web-and-queues/sub-content/django-and-aws/de.md)
 [//]: # (https://raw.githubusercontent.com/JangasCodingplace/jangas-codingplace-blogs/main/blogs/web-and-queues/sub-content/scala-akka-conceptual/de.md)
 [//]: # (https://raw.githubusercontent.com/JangasCodingplace/jangas-codingplace-blogs/main/blogs/web-and-queues/sub-content/scala-akka-impl/de.md)
