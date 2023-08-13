@@ -41,14 +41,14 @@ Dies ist ein Mehrteiliger Beitrag. Alle Lösungen funktionieren unabhängig vone
 Ich muss sagen: Ich bin kein guter Scala Entwickler. Allerdings haben mir einige Konzepte sehr dabei geholfen bestimmte Dinge besser zu verstehen und auch meinen Python Code zu verbessern. Auch wenn man es nicht unbedingt anwendet, kann es durchaus bereichernd sein, sich mal nach links und rechts umzusehen und eventuell *versehentlich* etwas für sich mitzunehmen.
 
 
-[comment]: <> START CUSTOM SCRIPT
-[comment]: <> START CONTENT LIST
-[comment]: <> https://raw.githubusercontent.com/JangasCodingplace/jangas-codingplace-blogs/main/blogs/web-and-queues/sub-content/django-conceptual/de.md
-[comment]: <> https://raw.githubusercontent.com/JangasCodingplace/jangas-codingplace-blogs/main/blogs/web-and-queues/sub-content/django-pure-impl/de.md
-[comment]: <> https://raw.githubusercontent.com/JangasCodingplace/jangas-codingplace-blogs/main/blogs/web-and-queues/sub-content/cloud-conceptual/de.md
-[comment]: <> https://raw.githubusercontent.com/JangasCodingplace/jangas-codingplace-blogs/main/blogs/web-and-queues/sub-content/django-and-aws-impl/de.md
-[comment]: <> https://raw.githubusercontent.com/JangasCodingplace/jangas-codingplace-blogs/main/blogs/web-and-queues/sub-content/scala-akka-conceptual/de.md
-[comment]: <> https://raw.githubusercontent.com/JangasCodingplace/jangas-codingplace-blogs/main/blogs/web-and-queues/sub-content/scala-akka-impl/de.md
-[comment]: <> https://raw.githubusercontent.com/JangasCodingplace/jangas-codingplace-blogs/main/blogs/web-and-queues/sub-content/conclusion/de.md
-[comment]: <> END CONTENT LIST
-[comment]: <> END CUSTOM SCRIPT
+[//]: # (START CUSTOM SCRIPT)
+[//]: # (START CONTENT LIST)
+[//]: # (https://raw.githubusercontent.com/JangasCodingplace/jangas-codingplace-blogs/main/blogs/web-and-queues/sub-content/django-conceptual/de.md)
+[//]: # (https://raw.githubusercontent.com/JangasCodingplace/jangas-codingplace-blogs/main/blogs/web-and-queues/sub-content/django-pure-impl/de.md)
+[//]: # (https://raw.githubusercontent.com/JangasCodingplace/jangas-codingplace-blogs/main/blogs/web-and-queues/sub-content/cloud-conceptual/de.md)
+[//]: # (https://raw.githubusercontent.com/JangasCodingplace/jangas-codingplace-blogs/main/blogs/web-and-queues/sub-content/django-and-aws-impl/de.md)
+[//]: # (https://raw.githubusercontent.com/JangasCodingplace/jangas-codingplace-blogs/main/blogs/web-and-queues/sub-content/scala-akka-conceptual/de.md)
+[//]: # (https://raw.githubusercontent.com/JangasCodingplace/jangas-codingplace-blogs/main/blogs/web-and-queues/sub-content/scala-akka-impl/de.md)
+[//]: # (https://raw.githubusercontent.com/JangasCodingplace/jangas-codingplace-blogs/main/blogs/web-and-queues/sub-content/conclusion/de.md)
+[//]: # (END CONTENT LIST)
+[//]: # (END CUSTOM SCRIPT)
