@@ -11,18 +11,12 @@ Dieser Artikel ist Teil von "JangasCodingplace" - meine persönliche Webseite. M
 
 Zudem ist JangasCodingplace ein Ort, der mir dabei helfen soll, meine kleinen Freizeitprojekte abzuschließen und vorzustellen. Dieses Projekt ist ein Teil davon.
 
-## Das Szenario
-Dieses Projekt stellt eine Teilfunktion meiner "Dev-Guro" Anwendung dar (diese stelle ich bei Gelegenheit mal vor). In der Teilfunktion werden Dev-Logs an eine API gesendet. Anschließend wird der Techstack in Form von Tags aus den Log Einträgen gezogen. Das übernimmt OpenAI.
+[//]: # (START CUSTOM SCRIPT)
+[//]: # (START MARKDOWNREF)
+[//]: # (https://raw.githubusercontent.com/JangasCodingplace/jangas-codingplace-blogs/main/blogs/web-and-queues/assets/project-description/de.md)
+[//]: # (END MARKDOWNREF)
+[//]: # (END CUSTOM SCRIPT)
 
-Hier mal ein konkretes Beispiel:
-> Heute habe ich eine Anwendung mit Django geschrieben. Diese Anwendung schreibt Informationen nach Elasticsearch und ist auf ImaginaryNoneExistence Cloud deployed.
-
-OpenAI extrahiert dann folgende Informationen:
-- Django
-- Elasticsearch
-- ImaginaryNoneExistence Cloud
-
-Der Techstack ist wichtig für das System und weitere Prompts. Die Nutzerinnen und Nutzer der Anwendung interessieren sich dafür aber nicht wirklich und sollen die Informationextraktion bestenfalls nicht in Form von längeren Wartezeiten merken.
 
 ## Umgang mit dieser Projektvorstellung
 Ich werde drei unterschiedliche Lösungsanstätze vorstellen, ein Ansatz wilder als der andere:
