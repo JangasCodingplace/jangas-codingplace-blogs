@@ -30,6 +30,19 @@ mitzuteilen. Sende mir dazu doch einfach eine Mail an
 - Warum ich es hasse über Skalierbarkeit zu sprechen
 - Überall Datenpipelines - eine Einführende Übersicht in die Welt der High Throughput Pipelines 
 - Fun with Microservices - wie man Software Projekte am Leben hält
+- Materializing Streams mit
+	- Kafka Streams
+ 	- Spark Structured Streaming
+  	- Apache Flink
+  	- Akka Streams
+  	- Apache Airflow
+
+## Learningpipeline
+- Kafka Streams
+- Hadoop & HDFS
+- Akka Streams
+- Apache Flink
+- Apache Airflow
 
 Hast du Meinungen oder andere Vorschläge? Lass' es mich wissen! 
 Sende eine Mail an: info@jangascodinglpace.com
