@@ -36,6 +36,8 @@ mitzuteilen. Sende mir dazu doch einfach eine Mail an
   	- Apache Flink
   	- Akka Streams
   	- Apache Airflow
+- Python Threading & GIL
+- Scala Nebenläufigkeit mit Akka
 
 ## Learningpipeline
 - Kafka Streams
