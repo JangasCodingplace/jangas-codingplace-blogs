@@ -47,6 +47,8 @@ to share your thoughts or collaborate on potential articles.
   	- Apache Flink
   	- Akka Streams
   	- Apache Airflow
+- Python Threading & GIL
+- Scala concurreny w. Akka
 
 ## Learningpipeline
 - Kafka Streams
