@@ -41,6 +41,19 @@ to share your thoughts or collaborate on potential articles.
 - Why I do not like to talk about scalability
 - Data Pipelines Everywhere - Guide into High Throughput Data Pipelines
 - Fun with Microservices - how to maintain a software architecture
+- Materializing Streams with
+	- Kafka Streams
+ 	- Spark Structured Streaming
+  	- Apache Flink
+  	- Akka Streams
+  	- Apache Airflow
+
+## Learningpipeline
+- Kafka Streams
+- Hadoop & HDFS
+- Akka Streams
+- Apache Flink
+- Apache Airflow
 
 Any other impressions? Let me know! Send a mail to: info@jangascodinglpace.com
 
